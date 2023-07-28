@@ -1,0 +1,930 @@
+{
+    "properties": {
+        "uuid": {
+            "type": "keyword"
+        },
+        "time": {
+            "type": "date"
+        },
+        "type": {
+            "type": "keyword"
+        },
+        "data": {
+            "properties": {
+                "AppResourceUsageMonitor": {
+                    "record_id": {
+                        "type": "integer"
+                    },
+                    "app_name": {
+                        "type": "keyword"
+                    },
+                    "app_id": {
+                        "type": "integer"
+                    },
+                    "user_name": {
+                        "type": "keyword"
+                    },
+                    "user_sid": {
+                        "type": "keyword"
+                    },
+                    "foregroundcycletime": {
+                        "type": "long"
+                    },
+                    "backgroundcycletime": {
+                        "type": "long"
+                    },
+                    "facetime": {
+                        "type": "long"
+                    },
+                    "foregroundbytesread": {
+                        "type": "long"
+                    },
+                    "foregroundbyteswritten": {
+                        "type": "long"
+                    },
+                    "foregroundnumreadoperations": {
+                        "type": "long"
+                    },
+                    "foregroundnumwriteoperations": {
+                        "type": "long"
+                    },
+                    "foregroundnumberofflushes": {
+                        "type": "long"
+                    },
+                    "backgroundbytesread": {
+                        "type": "long"
+                    },
+                    "backgroundbyteswritten": {
+                        "type": "long"
+                    },
+                    "backgroundnumreadoperations": {
+                        "type": "long"
+                    },
+                    "backgroundnumwriteoperations": {
+                        "type": "long"
+                    },
+                    "backgroundnumberofflushes": {
+                        "type": "long"
+                    },
+                    "interfaceluid": {
+                        "type": "integer"
+                    },
+                    "timestamp": {
+                        "type": "long"
+                    }
+                },
+                "ARPCache": {
+                    "interface": {
+                        "type": "keyword"
+                    },
+                    "internetaddress": {
+                        "type": "ip"
+                    },
+                    "physicaladdress": {
+                        "type": "keyword"
+                    },
+                    "type": {
+                        "type": "keyword"
+                    }
+                },
+                "BaseService": {
+                    "name": {
+                        "type": "keyword"
+                    },
+                    "caption": {
+                        "type": "keyword"
+                    },
+                    "description": {
+                        "type": "keyword"
+                    },
+                    "displayname": {
+                        "type": "keyword"
+                    },
+                    "errorcontrol": {
+                        "type": "keyword"
+                    },
+                    "pathname": {
+                        "type": "keyword"
+                    },
+                    "creationclassname": {
+                        "type": "keyword"
+                    },
+                    "servicetype": {
+                        "type": "keyword"
+                    },
+                    "started": {
+                        "type": "keyword"
+                    },
+                    "startmode": {
+                        "type": "keyword"
+                    },
+                    "startname": {
+                        "type": "keyword"
+                    },
+                    "state": {
+                        "type": "keyword"
+                    },
+                    "status": {
+                        "type": "keyword"
+                    },
+                    "systemname": {
+                        "type": "keyword"
+                    },
+                    "acceptpause": {
+                        "type": "keyword"
+                    },
+                    "acceptstop": {
+                        "type": "keyword"
+                    }
+                },
+                "ChromeBookmarks": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "parent": {
+                        "type": "keyword"
+                    },
+                    "type": {
+                        "type": "keyword"
+                    },
+                    "name": {
+                        "type": "keyword"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "guid": {
+                        "type": "keyword"
+                    },
+                    "date_added": {
+                        "type": "keyword"
+                    },
+                    "date_modified": {
+                        "type": "keyword"
+                    }
+                },
+                "ChromeCache": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "URL": {
+                        "type": "keyword"
+                    },
+                    "web_site": {
+                        "type": "keyword"
+                    },
+                    "frame": {
+                        "type": "keyword"
+                    },
+                    "cache_control": {
+                        "type": "keyword"
+                    },
+                    "content_encoding": {
+                        "type": "keyword"
+                    },
+                    "content_length": {
+                        "type": "integer"
+                    },
+                    "content_type": {
+                        "type": "keyword"
+                    },
+                    "date": {
+                        "type": "date"
+                    },
+                    "expires": {
+                        "type": "date"
+                    },
+                    "last_modified": {
+                        "type": "date"
+                    },
+                    "server": {
+                        "type": "keyword"
+                    },
+                    "usage_counter": {
+                        "type": "integer"
+                    },
+                    "reuse_counter": {
+                        "type": "integer"
+                    }
+                },
+                "ChromeDownload": {
+                    "download_url": {
+                        "type": "keyword"
+                    },
+                    "guid": {
+                        "type": "keyword"
+                    },
+                    "current_path": {
+                        "type": "keyword"
+                    },
+                    "target_path": {
+                        "type": "keyword"
+                    },
+                    "received_bytes": {
+                        "type": "long"
+                    },
+                    "total_bytes": {
+                        "type": "long"
+                    },
+                    "start_time": {
+                        "type": "long"
+                    },
+                    "end_time": {
+                        "type": "long"
+                    },
+                    "last_access_time": {
+                        "type": "long"
+                    },
+                    "danger": {
+                        "type": "keyword"
+                    },
+                    "interrupt_reason": {
+                        "type": "keyword"
+                    },
+                    "opened": {
+                        "type": "keyword"
+                    },
+                    "referrer": {
+                        "type": "keyword"
+                    },
+                    "site_url": {
+                        "type": "keyword"
+                    },
+                    "tab_url": {
+                        "type": "keyword"
+                    },
+                    "tab_referrer_url": {
+                        "type": "keyword"
+                    },
+                    "etag": {
+                        "type": "keyword"
+                    },
+                    "last_modified": {
+                        "type": "date"
+                    },
+                    "mime_type": {
+                        "type": "keyword"
+                    },
+                    "original_mime_type": {
+                        "type": "keyword"
+                    }
+                },
+                "ChromeHistory": {
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "title": {
+                        "type": "keyword"
+                    },
+                    "visit_time": {
+                        "type": "long"
+                    },
+                    "visit_count": {
+                        "type": "integer"
+                    },
+                    "last_visit_time": {
+                        "type": "long"
+                    }
+                },
+                "ChromeKeywordSearch": {
+                    "term": {
+                        "type": "keyword"
+                    },
+                    "title": {
+                        "type": "keyword"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    }
+                },
+                "ChromeLogin": {
+                    "origin_url": {
+                        "type": "keyword"
+                    },
+                    "action_url": {
+                        "type": "keyword"
+                    },
+                    "username_element": {
+                        "type": "keyword"
+                    },
+                    "username_value": {
+                        "type": "keyword"
+                    },
+                    "password_element": {
+                        "type": "keyword"
+                    },
+                    "password_value": {
+                        "type": "keyword"
+                    },
+                    "date_created": {
+                        "type": "long"
+                    }
+                },
+                "DNSInfo": {
+                    "TimeToLive": {
+                        "type": "integer"
+                    },
+                    "PSComputerName": {
+                        "type": "keyword"
+                    },
+                    "Caption": {
+                        "type": "keyword"
+                    },
+                    "Description": {
+                        "type": "keyword"
+                    },
+                    "ElementName": {
+                        "type": "keyword"
+                    },
+                    "InstanceId": {
+                        "type": "integer"
+                    },
+                    "Data": {
+                        "type": "keyword"
+                    },
+                    "DataLength": {
+                        "type": "integer"
+                    },
+                    "Entry": {
+                        "type": "keyword"
+                    },
+                    "Name": {
+                        "type": "keyword"
+                    },
+                    "Section": {
+                        "type": "integer"
+                    },
+                    "Status": {
+                        "type": "integer"
+                    },
+                    "Type": {
+                        "type": "integer"
+                    }
+                },
+                "EdgeCache": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "URL": {
+                        "type": "keyword"
+                    },
+                    "web_site": {
+                        "type": "keyword"
+                    },
+                    "frame": {
+                        "type": "keyword"
+                    },
+                    "cache_control": {
+                        "type": "keyword"
+                    },
+                    "content_encoding": {
+                        "type": "keyword"
+                    },
+                    "content_length": {
+                        "type": "integer"
+                    },
+                    "content_type": {
+                        "type": "keyword"
+                    },
+                    "date": {
+                        "type": "date"
+                    },
+                    "expires": {
+                        "type": "date"
+                    },
+                    "last_modified": {
+                        "type": "date"
+                    },
+                    "server": {
+                        "type": "keyword"
+                    },
+                    "usage_counter": {
+                        "type": "integer"
+                    },
+                    "reuse_counter": {
+                        "type": "integer"
+                    }
+                },
+                "EdgeCookies": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "creation_utc": {
+                        "type": "long"
+                    },
+                    "host_key": {
+                        "type": "keyword"
+                    },
+                    "name": {
+                        "type": "keyword"
+                    },
+                    "value": {
+                        "type": "keyword"
+                    },
+                    "encrypted_value": {
+                        "type": "keyword"
+                    },
+                    "expires_utc": {
+                        "type": "long"
+                    },
+                    "last_access_utc": {
+                        "type": "long"
+                    },
+                    "source_port": {
+                        "type": "integer"
+                    }
+                },
+                "EdgeHistory": {
+                    "id": {
+                        "type": "keyword"
+                    },
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "title": {
+                        "type": "keyword"
+                    },
+                    "visit_time": {
+                        "type": "long"
+                    },
+                    "visit_count": {
+                        "type": "integer"
+                    },
+                    "last_visit_time": {
+                        "type": "long"
+                    }
+                },
+                "EdgeLogin": {
+                    "id": {
+                        "type": "keyword"
+                    },
+                    "origin_url": {
+                        "type": "keyword"
+                    },
+                    "action_url": {
+                        "type": "keyword"
+                    },
+                    "username_element": {
+                        "type": "keyword"
+                    },
+                    "username_value": {
+                        "type": "keyword"
+                    },
+                    "password_element": {
+                        "type": "keyword"
+                    },
+                    "password_value": {
+                        "type": "keyword"
+                    },
+                    "date_created": {
+                        "type": "long"
+                    }
+                },
+                "EventApplication": {
+                    "eventrecordid": {
+                        "type": "integer"
+                    },
+                    "providername": {
+                        "type": "keyword"
+                    },
+                    "providerguid": {
+                        "type": "keyword"
+                    },
+                    "eventid": {
+                        "type": "integer"
+                    },
+                    "version": {
+                        "type": "integer"
+                    },
+                    "level": {
+                        "type": "keyword"
+                    },
+                    "keywords": {
+                        "type": "keyword"
+                    },
+                    "task": {
+                        "type": "integer"
+                    },
+                    "opcode": {
+                        "type": "integer"
+                    },
+                    "createdsystemtime": {
+                        "type": "long"
+                    },
+                    "correlationactivityid": {
+                        "type": "keyword"
+                    },
+                    "correlationrelatedactivityid": {
+                        "type": "keyword"
+                    },
+                    "executionprocessid": {
+                        "type": "integer"
+                    },
+                    "executionthreadid": {
+                        "type": "integer"
+                    },
+                    "channel": {
+                        "type": "keyword"
+                    },
+                    "computer": {
+                        "type": "keyword"
+                    },
+                    "securityuserid": {
+                        "type": "keyword"
+                    },
+                    "evtrenderdata": {
+                        "type": "keyword"
+                    }
+                },
+                "EventSecurity": {
+                    "eventrecordid": {
+                        "type": "integer"
+                    },
+                    "providername": {
+                        "type": "keyword"
+                    },
+                    "providerguid": {
+                        "type": "keyword"
+                    },
+                    "eventid": {
+                        "type": "integer"
+                    },
+                    "version": {
+                        "type": "integer"
+                    },
+                    "level": {
+                        "type": "keyword"
+                    },
+                    "keywords": {
+                        "type": "keyword"
+                    },
+                    "task": {
+                        "type": "integer"
+                    },
+                    "opcode": {
+                        "type": "integer"
+                    },
+                    "createdsystemtime": {
+                        "type": "long"
+                    },
+                    "correlationactivityid": {
+                        "type": "keyword"
+                    },
+                    "correlationrelatedactivityid": {
+                        "type": "keyword"
+                    },
+                    "executionprocessid": {
+                        "type": "integer"
+                    },
+                    "executionthreadid": {
+                        "type": "integer"
+                    },
+                    "channel": {
+                        "type": "keyword"
+                    },
+                    "computer": {
+                        "type": "keyword"
+                    },
+                    "securityuserid": {
+                        "type": "keyword"
+                    },
+                    "evtrenderdata": {
+                        "type": "keyword"
+                    }
+                },
+                "EventSystem": {
+                    "eventrecordid": {
+                        "type": "integer"
+                    },
+                    "providername": {
+                        "type": "keyword"
+                    },
+                    "providerguid": {
+                        "type": "keyword"
+                    },
+                    "eventid": {
+                        "type": "long"
+                    },
+                    "version": {
+                        "type": "keyword"
+                    },
+                    "level": {
+                        "type": "keyword"
+                    },
+                    "keywords": {
+                        "type": "keyword"
+                    },
+                    "task": {
+                        "type": "integer"
+                    },
+                    "opcode": {
+                        "type": "integer"
+                    },
+                    "createdsystemtime": {
+                        "type": "long"
+                    },
+                    "correlationactivityid": {
+                        "type": "keyword"
+                    },
+                    "correlationrelatedactivityid": {
+                        "type": "keyword"
+                    },
+                    "executionprocessid": {
+                        "type": "integer"
+                    },
+                    "executionthreadid": {
+                        "type": "integer"
+                    },
+                    "channel": {
+                        "type": "keyword"
+                    },
+                    "computer": {
+                        "type": "keyword"
+                    },
+                    "securityuserid": {
+                        "type": "keyword"
+                    },
+                    "evtrenderdata": {
+                        "type": "keyword"
+                    }
+                },
+                "IEHistory": {
+                    "url": {
+                        "type": "keyword"
+                    },
+                    "title": {
+                        "type": "keyword"
+                    },
+                    "expirestime": {
+                        "type": "keyword"
+                    },
+                    "lastupdatedtime": {
+                        "type": "keyword"
+                    },
+                    "visitedtime": {
+                        "type": "keyword"
+                    }
+                },
+                "InstalledSoftware": {
+                    "displayname": {
+                        "type": "keyword"
+                    },
+                    "registryname": {
+                        "type": "keyword"
+                    },
+                    "displayversion": {
+                        "type": "keyword"
+                    },
+                    "installdate": {
+                        "type": "long"
+                    },
+                    "installedfor": {
+                        "type": "keyword"
+                    },
+                    "installlocation": {
+                        "type": "keyword"
+                    },
+                    "publisher": {
+                        "type": "keyword"
+                    },
+                    "uninstallstring": {
+                        "type": "keyword"
+                    },
+                    "modifypath": {
+                        "type": "keyword"
+                    },
+                    "comments": {
+                        "type": "keyword"
+                    },
+                    "urlinfoabout": {
+                        "type": "keyword"
+                    },
+                    "urlupdateinfo": {
+                        "type": "keyword"
+                    },
+                    "helplink": {
+                        "type": "keyword"
+                    },
+                    "installsource": {
+                        "type": "keyword"
+                    },
+                    "releasetype": {
+                        "type": "keyword"
+                    },
+                    "displayicon": {
+                        "type": "keyword"
+                    },
+                    "estimatedsize": {
+                        "type": "long"
+                    },
+                    "registrytime": {
+                        "type": "long"
+                    },
+                    "installfoldercreatedtime": {
+                        "type": "long"
+                    },
+                    "installfoldermodifiedtime": {
+                        "type": "long"
+                    }
+                },
+                "JumpList": {
+                    "fullpath": { "type": "keyword" },
+                    "application_id": { "type": "keyword" },
+                    "computer_name": { "type": "keyword" },
+                    "filesize": { "type": "long" },
+                    "entry_id": { "type": "integer" },
+                    "recordtime": { "type": "long" },
+                    "createtime": { "type": "long" },
+                    "accesstime": { "type": "long" },
+                    "modifiedtime": { "type": "long" }
+                },
+                "MUICache": {
+                    "applicationpath": { "type": "keyword" },
+                    "applicationname": { "type": "keyword" }
+                },
+                "Network": {
+                    "processid": { "type": "integer" },
+                    "processname": { "type": "keyword" },
+                    "localaddress": { "type": "keyword" },
+                    "localport": { "type": "integer" },
+                    "remoteaddress": { "type": "keyword" },
+                    "remoteport": { "type": "integer" },
+                    "state": { "type": "keyword" },
+                    "remotehostname": { "type": "keyword" },
+                    "protocol": { "type": "keyword" }
+                },
+                "NetworkDataUsageMonitor": {
+                    "record_id": { "type": "integer" },
+                    "app_name": { "type": "keyword" },
+                    "app_id": { "type": "integer" },
+                    "user_name": { "type": "keyword" },
+                    "user_sid": { "type": "keyword" },
+                    "bytes_sent": { "type": "long" },
+                    "bytes_recvd": { "type": "long" },
+                    "network_adapter": { "type": "keyword" },
+                    "network_adapter_guid": { "type": "keyword" },
+                    "interfaceluid": { "type": "keyword" },
+                    "timestamp": { "type": "long" }
+                },
+                "NetworkResources": {
+                    "resourcesname": { "type": "keyword" },
+                    "resourcestype": { "type": "keyword" },
+                    "comment": { "type": "keyword" },
+                    "localpath": { "type": "keyword" },
+                    "provider": { "type": "keyword" },
+                    "scope": { "type": "keyword" },
+                    "displaytype": { "type": "keyword" },
+                    "usage": { "type": "keyword" },
+                    "ipaddress": { "type": "keyword" }
+                },
+                "OpenedFiles": {
+                    "processid": {"type": "integer"},
+                    "processname": {"type": "keyword"},
+                    "type": {"type": "keyword"},
+                    "objectname": {"type": "keyword"}
+                },
+                "Prefetch": {
+                    "filename": {"type": "keyword"},
+                    "processname": {"type": "keyword"},
+                    "lastruntime": {"type": "keyword"},
+                    "processpath": {"type": "keyword"},
+                    "runcount": {"type": "integer"},
+                    "filesize": {"type": "integer"},
+                    "foldercreatedtime": {"type": "long"},
+                    "foldermodifiedtime": {"type": "long"}
+                },
+                "Process": {
+                    "pid": { "type": "integer" },
+                    "process_name": { "type": "keyword" },
+                    "parent_pid": { "type": "integer" },
+                    "processcreatetime": { "type": "long" },
+                    "process_path": { "type": "keyword" },
+                    "process_command": { "type": "keyword" },
+                    "user_name": { "type": "keyword" },
+                    "digitalsignature": { "type": "keyword" },
+                    "productname": { "type": "keyword" },
+                    "fileversion": { "type": "keyword" },
+                    "filedescription": { "type": "keyword" },
+                    "companyname": { "type": "keyword" },
+                    "priority": { "type": "keyword" }
+                },
+                "Service": {
+                    "name": { "type": "keyword" },
+                    "caption": { "type": "keyword" },
+                    "description": { "type": "keyword" },
+                    "displayname": { "type": "keyword" },
+                    "errorcontrol": { "type": "keyword" },
+                    "pathname": { "type": "keyword" },
+                    "processid": { "type": "integer" },
+                    "servicetype": { "type": "keyword" },
+                    "started": { "type": "keyword" },
+                    "startmode": { "type": "keyword" },
+                    "startname": { "type": "keyword" },
+                    "state": { "type": "keyword" },
+                    "status": { "type": "keyword" },
+                    "systemname": { "type": "keyword" }
+                },
+                "Shortcuts": {
+                    "shortcutname": { "type": "keyword" },
+                    "linkpath": { "type": "keyword" },
+                    "linkto": { "type": "keyword" },
+                    "arguments": { "type": "keyword" },
+                    "description": { "type": "keyword" },
+                    "workingdirectory": { "type": "keyword" },
+                    "iconlocation": { "type": "keyword" },
+                    "brokenshortcut": { "type": "keyword" },
+                    "hotkey": { "type": "keyword" },
+                    "showcmd": { "type": "keyword" },
+                    "modifytime": { "type": "long" }
+                },
+                "sqlite_sequence": {
+                    "name": { "type": "keyword" },
+                    "seq": { "type": "integer" }
+                },
+                "StartRun": {
+                    "name": { "type": "keyword" },
+                    "command": { "type": "keyword" },
+                    "user": { "type": "keyword" },
+                    "location": { "type": "keyword" },
+                    "caption": { "type": "keyword" },
+                    "description": { "type": "keyword" },
+                    "usersid": { "type": "keyword" }
+                },
+                "TaskSchedule": {
+                    "name": { "type": "keyword" },
+                    "path": { "type": "keyword" },
+                    "command": { "type": "keyword" },
+                    "lastruntime": { "type": "long" },
+                    "nextruntime": { "type": "long" },
+                    "startboundary": { "type": "long" },
+                    "endboundary": { "type": "long" }
+                },
+                "USBdevices": {
+                    "device_instance_id": { "type": "keyword" },
+                    "device_description": { "type": "keyword" },
+                    "hardware_ids": { "type": "keyword" },
+                    "bus_reported_device_description": { "type": "keyword" },
+                    "device_manufacturer": { "type": "keyword" },
+                    "device_friendly_name": { "type": "keyword" },
+                    "device_location_info": { "type": "keyword" },
+                    "device_security_descriptor_string": { "type": "keyword" },
+                    "containerid": { "type": "keyword" },
+                    "device_display_category": { "type": "keyword" },
+                    "device_letter": { "type": "keyword" },
+                    "enumerator": { "type": "keyword" },
+                    "install_date": { "type": "long" },
+                    "first_install_date": { "type": "long" },
+                    "last_arrival_date": { "type": "long" },
+                    "last_removal_date": { "type": "long" }
+                },
+                "UserAssist": {
+                    "name": { "type": "keyword" },
+                    "classid": { "type": "keyword" },
+                    "of_times_executed": { "type": "integer" },
+                    "focus_count": { "type": "integer" },
+                    "focus_time(s)": { "type": "integer" },
+                    "modifiedtime": { "type": "long" }
+                },
+                "UserProfiles": {
+                    "username": { "type": "keyword" },
+                    "profilepath": { "type": "keyword" },
+                    "usersid": { "type": "keyword" },
+                    "registryloaded": { "type": "keyword" },
+                    "foldercreatedtime": { "type": "long" },
+                    "foldermodifiedtime": { "type": "long" },
+                    "lastlogontime": { "type": "long" },
+                    "privileglevel": { "type": "keyword" }
+                },
+                "WindowsActivity": {
+                    "user_name": { "type": "keyword" },
+                    "app_id": { "type": "keyword" },
+                    "app_activity_id": { "type": "keyword" },
+                    "activity_type": { "type": "keyword" },
+                    "activity_status": { "type": "keyword" },
+                    "tag": { "type": "keyword" },
+                    "group": { "type": "keyword" },
+                    "priority": { "type": "integer" },
+                    "is_local_only": { "type": "integer" },
+                    "etag": { "type": "integer" },
+                    "created_in_cloud": { "type": "keyword" },
+                    "last_modified_time": { "type": "long" },
+                    "expiration_time": { "type": "long" },
+                    "start_time": { "type": "long" },
+                    "end_time": { "type": "long" },
+                    "last_modified_on_client": { "type": "long" }
+                },
+                "Wireless": {
+                    "profilename": { "type": "keyword" },
+                    "authentication": { "type": "keyword" },
+                    "encryption": { "type": "keyword" },
+                    "connectiontype": { "type": "keyword" },
+                    "password": { "type": "keyword" },
+                    "interfacedescription": { "type": "keyword" },
+                    "adapterguid": { "type": "keyword" },
+                    "filename": { "type": "keyword" },
+                    "lastmodifiedtime": { "type": "long" }
+                }
+            }
+        }
+    }
+}
