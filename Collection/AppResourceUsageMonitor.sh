@@ -33,3 +33,4 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_appresourceusagemonitor?pretty" -H 
     }
 }
 '
+ 
