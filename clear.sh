@@ -8,4 +8,4 @@ curl -X POST "http://ela-master.ed.qa:9200/ed_chromedownload/_delete_by_query?pr
 }
 '
 
-curl -X DELETE "http://ela.ed.qa:9200/ed_sqlitesequence?pretty"
+curl -X DELETE "http://ela-master.ed.qa:9200/ed_memory?pretty"

@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-curl -X PUT "http://ela.ed.qa:9200/ed_memory?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/ed_memory?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
@@ -9,6 +9,7 @@ curl -X PUT "http://ela.ed.qa:9200/ed_memory?pretty" -H 'Content-Type: applicati
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
                 "processName": { "type": "text" },
+                "processCreateTime": { "type": "integer" },
                 "processConnectIP": { "type": "text" },
                 "dynamicCommand": { "type": "text" },
                 "processMD5": { "type": "text" },
