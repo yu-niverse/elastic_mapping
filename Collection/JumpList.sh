@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-curl -X PUT "http://ela.ed.qa:9200/ed_jumplist?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/ed_jumplist?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
@@ -11,7 +11,7 @@ curl -X PUT "http://ela.ed.qa:9200/ed_jumplist?pretty" -H 'Content-Type: applica
                 "fullpath": { "type": "text" },
                 "application_id": { "type": "keyword" },
                 "computer_name": { "type": "keyword" },
-                "filesize": { "type": "integer" },
+                "filesize": { "type": "long" },
                 "entry_id": { "type": "integer" },
                 "recordtime": { "type": "date" },
                 "createtime": { "type": "date" },

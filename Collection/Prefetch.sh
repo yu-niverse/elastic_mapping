@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-curl -X PUT "http://ela.ed.qa:9200/ed_prefetch?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/ed_prefetch?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
@@ -13,7 +13,7 @@ curl -X PUT "http://ela.ed.qa:9200/ed_prefetch?pretty" -H 'Content-Type: applica
                 "lastruntime": {"type": "date"},
                 "processpath": {"type": "text"},
                 "runcount": {"type": "integer"},
-                "filesize": {"type": "integer"},
+                "filesize": {"type": "long"},
                 "foldercreatedtime": {"type": "date"},
                 "foldermodifiedtime": {"type": "date"}
             }

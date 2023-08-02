@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-curl -X PUT "http://ela.ed.qa:9200/ed_muicache?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/ed_muicache?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
