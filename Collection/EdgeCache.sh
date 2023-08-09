@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_edgecache?pretty" -H 'Content-Type:
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "id": { "type": "integer" },
                 "url": { "type": "text" },
                 "web_site": { "type": "text" },

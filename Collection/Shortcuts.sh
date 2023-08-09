@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_shortcuts?pretty" -H 'Content-Type:
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "shortcutname": { "type": "text" },
                 "linkpath": { "type": "text" },
                 "linkto": { "type": "text" },

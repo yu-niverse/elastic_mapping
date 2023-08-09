@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_networkresources?pretty" -H 'Conten
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "resourcesname": { "type": "text" },
                 "resourcestype": { "type": "text" },
                 "comment": { "type": "text" },

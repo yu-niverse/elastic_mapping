@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_userprofiles?pretty" -H 'Content-Ty
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "username": { "type": "text" },
                 "profilepath": { "type": "text" },
                 "usersid": { "type": "keyword" },

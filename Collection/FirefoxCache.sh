@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_firefoxcache?pretty" -H 'Content-Ty
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "id": { "type": "integer" },
                 "url": { "type": "text" },
                 "server_response": { "type": "text" },

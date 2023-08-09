@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_dnsinfo?pretty" -H 'Content-Type: a
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "timetolive": { "type": "integer" },
                 "pscomputername": { "type": "keyword" },
                 "caption": { "type": "text" },

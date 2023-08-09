@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-dir="Dev"
+dir="Explorer"
 
 # Check if the specified directory exists
 if [ ! -d "$dir" ]; then
@@ -72,7 +72,7 @@ done
 # ./Collection/WindowsActivity.sh
 # ./Collection/SqliteSequence.sh
 
-# curl -X POST "http://ela-master.ed.qa:9200/ed_memorynetwork/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'
+# curl -X POST "http://ela-master.ed.qa:9200/ed_de_memory/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'
 # {
 #   "query": {
 #     "match_all": {}
@@ -80,4 +80,4 @@ done
 # }
 # '
 
-# curl -X DELETE "http://ela-master.ed.qa:9200/ed_memory?pretty"
+# curl -X DELETE "http://ela-master.ed.qa:9200/ed_memory_network?pretty"

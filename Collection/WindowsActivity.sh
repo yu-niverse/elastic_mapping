@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_windowsactivity?pretty" -H 'Content
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "user_name": { "type": "text" },
                 "app_id": { "type": "text" },
                 "app_activity_id": { "type": "keyword" },

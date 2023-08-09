@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_chromedownload?pretty" -H 'Content-
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "download_url": { "type": "text" },
                 "guid": { "type": "keyword" },
                 "current_path": { "type": "text" },

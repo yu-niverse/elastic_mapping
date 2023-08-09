@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_chromehistory?pretty" -H 'Content-T
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "url": { "type": "text" },
                 "title": { "type": "text" },
                 "visit_time": { "type": "date" },

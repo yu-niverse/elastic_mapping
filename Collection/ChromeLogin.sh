@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_chromelogin?pretty" -H 'Content-Typ
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "origin_url": { "type": "text" },
                 "action_url": { "type": "text" },
                 "username_element": { "type": "text" },

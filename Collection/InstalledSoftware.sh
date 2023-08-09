@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_installedsoftware?pretty" -H 'Conte
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "displayname": { "type": "text" },
                 "registryname": { "type": "text" },
                 "displayversion": { "type": "text" },

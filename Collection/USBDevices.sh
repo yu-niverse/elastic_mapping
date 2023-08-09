@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_usbdevices?pretty" -H 'Content-Type
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "device_instance_id": { "type": "keyword" },
                 "device_description": { "type": "text" },
                 "hardware_ids": { "type": "text" },

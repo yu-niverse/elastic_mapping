@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_eventapplication?pretty" -H 'Conten
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "eventrecordid": { "type": "integer" },
                 "providername": { "type": "text" },
                 "providerguid": { "type": "keyword" },

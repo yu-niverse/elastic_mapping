@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_process?pretty" -H 'Content-Type: a
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "pid": { "type": "integer" },
                 "process_name": { "type": "text" },
                 "parent_pid": { "type": "integer" },

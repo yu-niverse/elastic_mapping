@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_memory?pretty" -H 'Content-Type: ap
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "processName": { "type": "text" },
                 "processCreateTime": { "type": "integer" },
                 "processConnectIP": { "type": "text" },

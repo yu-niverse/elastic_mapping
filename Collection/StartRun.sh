@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_startrun?pretty" -H 'Content-Type: 
             "properties": {
                 "uuid": { "type": "text" },
                 "agent": { "type": "text" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "name": { "type": "text" },
                 "command": { "type": "text" },
                 "user": { "type": "text" },

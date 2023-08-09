@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_network?pretty" -H 'Content-Type: a
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "processid": { "type": "integer" },
                 "processname": { "type": "text" },
                 "localaddress": { "type": "text" },

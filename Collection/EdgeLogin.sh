@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_edgelogin?pretty" -H 'Content-Type:
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "id": { "type": "integer" },
                 "origin_url": { "type": "text" },
                 "action_url": { "type": "text" },

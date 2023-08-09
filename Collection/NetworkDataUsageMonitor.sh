@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_networkdatausagemonitor?pretty" -H 
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "record_id": { "type": "integer" },
                 "app_name": { "type": "text" },
                 "app_id": { "type": "integer" },

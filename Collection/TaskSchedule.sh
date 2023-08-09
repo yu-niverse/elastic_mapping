@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_taskschedule?pretty" -H 'Content-Ty
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "name": { "type": "text" },
                 "path": { "type": "text" },
                 "command": { "type": "text" },

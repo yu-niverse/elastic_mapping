@@ -8,6 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_edgecookies?pretty" -H 'Content-Typ
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
                 "id": { "type": "integer" },
                 "creation_utc": { "type": "date" },
                 "host_key": { "type": "text" },

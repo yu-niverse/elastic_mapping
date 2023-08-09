@@ -8,8 +8,8 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_de_memory_network?pretty" -H 'Conte
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
-                "pid" : { "type" : "integer" },
-                "address" : { "type" : "integer" },
+                "processId" : { "type" : "integer" },
+                "address" : { "type" : "text" },
                 "timestamp" : { "type" : "date" },
                 "processCreateTime": { "type": "date" },
                 "connectionInOrOut": { "type" : "boolean" },
