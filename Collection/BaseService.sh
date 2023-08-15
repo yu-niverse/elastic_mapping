@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
+elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/ed_baseservice?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_baseservice?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
@@ -25,7 +26,11 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_baseservice?pretty" -H 'Content-Typ
                 "status": { "type": "keyword" },
                 "systemname": { "type": "keyword" },
                 "acceptpause": { "type": "boolean" },
-                "acceptstop": { "type": "boolean" }
+                "acceptstop": { "type": "boolean" },
+                "item_main": { "type": "text" },
+                "date_main": { "type": "date" },
+                "type_main": { "type": "keyword" },
+                "etc_main": { "type": "text" }
             }
         }
     }

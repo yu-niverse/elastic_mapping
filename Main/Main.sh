@@ -1,16 +1,17 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_explorer_relation?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_main?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
-                "isRoot": { "type": "boolean" },
-                "parent": { "type": "keyword" },
-                "child": { "type": "keyword" },
+                "agentIP": { "type": "keyword" },
+                "agentName": { "type": "keyword" },
+                "index": { "type": "keyword" },
                 "item_main": { "type": "text" },
                 "date_main": { "type": "date" },
                 "type_main": { "type": "keyword" },

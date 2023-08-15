@@ -1,25 +1,28 @@
 #! /usr/bin/env bash
 
-dir="Explorer"
+directories=("Memory" "Explorer" "Collection")
+# Loop through the directories
+for dir in "${directories[@]}"; do
+  # Check if the specified directory exists
+  if [ ! -d "$dir" ]; then
+    echo "Directory not found: $dir"
+    exit 1
+  fi
+  cd "$dir" || exit 1
 
-# Check if the specified directory exists
-if [ ! -d "$dir" ]; then
-  echo "Directory not found: $dir"
-  exit 1
-fi
-cd "$dir" || exit 1
+  files=$(find . -type f -executable)
+  if [ -z "$files" ]; then
+    echo "No executable scripts found in $dir"
+    exit 1
+  fi
 
-files=$(find . -type f -executable)
-if [ -z "$files" ]; then
-  echo "No executable scripts found in $dir"
-  exit 1
-fi
-
-# Execute each script one by one
-for script in $files; do
-  echo "Executing: $script"
-  ./"$script"
-  echo "Finished executing: $script"
+  # Execute each script one by one
+  for script in $files; do
+    echo "Executing: $script"
+    ./"$script" ed
+    echo "Finished executing: $script"
+  done
+  cd ..
 done
 
 # array1=("ed_appresourceusagemonitor" "ed_arpcache" "ed_baseservice" "ed_chromebookmarks" "ed_chromecache" "ed_chromedownload" "ed_chromehistory" "ed_chromekeywordsearch" "ed_chromelogin" "ed_dnsinfo")
@@ -71,13 +74,3 @@ done
 # ./Collection/UserProfiles.sh
 # ./Collection/WindowsActivity.sh
 # ./Collection/SqliteSequence.sh
-
-# curl -X POST "http://ela-master.ed.qa:9200/ed_de_memory/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'
-# {
-#   "query": {
-#     "match_all": {}
-#   }
-# }
-# '
-
-# curl -X DELETE "http://ela-master.ed.qa:9200/ed_memory_network?pretty"

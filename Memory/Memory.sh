@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
+elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/ed_memory?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_memory?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
@@ -11,7 +12,7 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_memory?pretty" -H 'Content-Type: ap
                 "agentIP": { "type": "keyword" },
                 "agentName": { "type": "keyword" },
                 "processName": { "type": "text" },
-                "processCreateTime": { "type": "integer" },
+                "processCreateTime": { "type": "date" },
                 "processConnectIP": { "type": "text" },
                 "dynamicCommand": { "type": "text" },
                 "processMD5": { "type": "text" },
@@ -20,7 +21,7 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_memory?pretty" -H 'Content-Type: ap
                 "parentProcessName": { "type": "text" },
                 "parentProcessPath": { "type": "text" },
                 "digitalSign": { "type": "text" },
-                "importOtherDLL": { "type": "boolean" },
+                "importOtherDLL": { "type": "text" },
                 "processId": { "type": "integer" },
                 "riskLevel": { "type": "integer" },        
                 "injectActive": { "type": "text" },
@@ -28,7 +29,11 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_memory?pretty" -H 'Content-Type: ap
                 "boot": { "type": "text" },
                 "hook": { "type": "text" },
                 "hide": { "type": "text" },
-                "mode": { "type": "keyword" }
+                "mode": { "type": "keyword" },
+                "item_main": { "type": "text" },
+                "date_main": { "type": "date" },
+                "type_main": { "type": "keyword" },
+                "etc_main": { "type": "text" }
             }
         }
     }

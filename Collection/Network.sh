@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
+elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/ed_network?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_network?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
@@ -18,7 +19,11 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_network?pretty" -H 'Content-Type: a
                 "remoteport": { "type": "integer" },
                 "state": { "type": "keyword" },
                 "remotehostname": { "type": "text" },
-                "protocol": { "type": "keyword" }
+                "protocol": { "type": "keyword" },
+                "item_main": { "type": "text" },
+                "date_main": { "type": "date" },
+                "type_main": { "type": "keyword" },
+                "etc_main": { "type": "text" }
             }
         }
     }

@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
+elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/ed_chromehistory?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_chromehistory?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
@@ -14,7 +15,11 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_chromehistory?pretty" -H 'Content-T
                 "title": { "type": "text" },
                 "visit_time": { "type": "date" },
                 "visit_count": { "type": "integer" },
-                "last_visit_time": { "type": "date" }
+                "last_visit_time": { "type": "date" },
+                "item_main": { "type": "text" },
+                "date_main": { "type": "date" },
+                "type_main": { "type": "keyword" },
+                "etc_main": { "type": "text" }
             }
         }
     }

@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
+elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/ed_windowsactivity?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_windowsactivity?pretty" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
@@ -25,7 +26,11 @@ curl -X PUT "http://ela-master.ed.qa:9200/ed_windowsactivity?pretty" -H 'Content
                 "expiration_time": { "type": "date" },
                 "start_time": { "type": "date" },
                 "end_time": { "type": "date" },
-                "last_modified_on_client": { "type": "date" }
+                "last_modified_on_client": { "type": "date" },
+                "item_main": { "type": "text" },
+                "date_main": { "type": "date" },
+                "type_main": { "type": "keyword" },
+                "etc_main": { "type": "text" }
             }
         }
     }
