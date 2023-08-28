@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-directories=("Memory" "Explorer" "Collection")
+directories=("Main" "Memory" "Explorer" "Collection" "LossCollection")
 # Loop through the directories
 for dir in "${directories[@]}"; do
   # Check if the specified directory exists
@@ -19,7 +19,7 @@ for dir in "${directories[@]}"; do
   # Execute each script one by one
   for script in $files; do
     echo "Executing: $script"
-    ./"$script" ed
+    ./"$script" qaqa
     echo "Finished executing: $script"
   done
   cd ..
