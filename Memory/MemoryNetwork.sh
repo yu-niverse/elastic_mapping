@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_prefetch?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_memory_network?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -57,14 +57,15 @@ curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_prefetch?pretty" -H '
                 "agent": { "type": "keyword" },
                 "agentIP": { "type": "ip" },
                 "agentName": { "type": "text", "analyzer": "custom_analyzer"},
-                "filename": {"type": "text", "analyzer": "custom_analyzer"},
-                "processname": {"type": "text", "analyzer": "custom_analyzer"},
-                "lastruntime": {"type": "date"},
-                "processpath": {"type": "text", "analyzer": "custom_analyzer"},
-                "runcount": {"type": "integer"},
-                "filesize": {"type": "long"},
-                "foldercreatedtime": {"type": "date"},
-                "foldermodifiedtime": {"type": "date"},
+                "processId" : { "type" : "integer" },
+                "processCreateTime": { "type": "date" },
+                "timestamp" : { "type" : "date" },
+                "srcAddress" : { "type" : "ip" },
+                "srcPort" : { "type" : "integer" },
+                "dstAddress" : { "type" : "ip" },
+                "dstPort" : { "type" : "integer" },
+                "action": { "type" : "text", "analyzer": "custom_analyzer"},
+                "connectionInOrOut": { "type" : "boolean" },
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},
