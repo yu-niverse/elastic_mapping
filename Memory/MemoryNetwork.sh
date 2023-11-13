@@ -55,7 +55,7 @@ curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_memory_network?pretty
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
-                "agentIP": { "type": "text" },
+                "agentIP": { "type": "text", "fielddata": true },
                 "agentName": { "type": "text", "analyzer": "custom_analyzer" },
                 "agentPort": { "type" : "integer" },
                 "agentCountry": { "type" : "keyword" },
@@ -69,7 +69,7 @@ curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_memory_network?pretty
                 "dstAddress": { "type" : "text" },
                 "dstPort": { "type" : "integer" },
                 "action": { "type" : "text", "analyzer": "custom_analyzer"},
-                "otherIP": { "type" : "text" },
+                "otherIP": { "type" : "text", "fielddata": true },
                 "otherPort": { "type" : "integer" },
                 "otherCountry": { "type" : "keyword" },
                 "otherLongitude": { "type" : "integer" },

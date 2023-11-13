@@ -55,9 +55,9 @@ curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_memory?pretty" -H 'Co
             "properties": {
                 "uuid": { "type": "keyword"},
                 "agent": { "type": "keyword"},
-                "agentIP": { "type": "ip"},
+                "agentIP": { "type": "text", "fielddata": true},
                 "agentName": { "type": "text", "analyzer": "custom_analyzer"},
-                "processName": { "type": "text", "analyzer": "custom_analyzer"},
+                "processName": { "type": "text", "analyzer": "custom_analyzer", "fielddata": true},
                 "processCreateTime": { "type": "date"},
                 "processConnectIP": { "type": "text", "analyzer": "custom_analyzer"},
                 "dynamicCommand": { "type": "text", "analyzer": "custom_analyzer"},
