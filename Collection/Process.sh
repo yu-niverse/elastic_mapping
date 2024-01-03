@@ -1,11 +1,11 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_process?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_process?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
-    "number_of_replicas": 1,
+    "number_of_replicas": 0,
     "analysis": {
       "char_filter": {
         "replace_special": {
@@ -70,6 +70,16 @@ curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_process?pretty" -H 'C
                 "filedescription": { "type": "text", "analyzer": "custom_analyzer"},
                 "companyname": { "type": "text", "analyzer": "custom_analyzer"},
                 "priority": { "type": "text", "analyzer": "custom_analyzer"},
+                "processMD5": { "type": "text", "analyzer": "custom_analyzer"},
+                "parentProcessName": { "type": "text", "analyzer": "custom_analyzer"},
+                "parentProcessPath": { "type": "text", "analyzer": "custom_analyzer"},
+                "injectActive": { "type": "text", "analyzer": "custom_analyzer"},
+                "processBeInjected": { "type": "integer"},
+                "boot": { "type": "text", "analyzer": "custom_analyzer"},
+                "hide": { "type": "text", "analyzer": "custom_analyzer"},
+                "importOtherDLL": { "type": "text", "analyzer": "custom_analyzer"},
+                "hook": { "type": "text", "analyzer": "custom_analyzer"},
+                "processConnectIP": { "type": "text", "analyzer": "custom_analyzer"},
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},

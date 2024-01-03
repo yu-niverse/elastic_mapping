@@ -1,11 +1,11 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_memory?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_memory?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
-    "number_of_replicas": 1,
+    "number_of_replicas": 0,
     "analysis": {
       "char_filter": {
         "replace_special": {
@@ -77,6 +77,9 @@ curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_memory?pretty" -H 'Co
                 "hook": { "type": "text", "analyzer": "custom_analyzer"},
                 "hide": { "type": "text", "analyzer": "custom_analyzer"},
                 "mode": { "type": "text", "analyzer": "custom_analyzer"},
+                "processKey": {"type": "keyword"},
+                "malicious": { "type" : "integer" },
+                "virusTotal": { "type" : "integer" },
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date"},
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},

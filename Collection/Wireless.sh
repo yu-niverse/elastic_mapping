@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_firefoxhistory?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_wireless?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -57,16 +57,15 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_firefoxhistory?pretty"
                 "agent": { "type": "keyword" },
                 "agentIP": { "type": "ip" },
                 "agentName": { "type": "text", "analyzer": "custom_analyzer"},
-                "url": { "type": "text", "analyzer": "custom_analyzer"},
-                "title": { "type": "text", "analyzer": "custom_analyzer"},
-                "from_url": { "type": "text", "analyzer": "custom_analyzer"},
-                "rev_host": { "type": "text", "analyzer": "custom_analyzer"},
-                "guid": { "type": "text", "analyzer": "custom_analyzer"},
-                "description": { "type": "text", "analyzer": "custom_analyzer"},
-                "preview_image_url": { "type": "text", "analyzer": "custom_analyzer"},
-                "visit_count": { "type": "integer" },
-                "visit_date": { "type": "date" },
-                "last_visit_date": { "type": "date" },
+                "profilename": { "type": "text", "analyzer": "custom_analyzer"},
+                "authentication": { "type": "text", "analyzer": "custom_analyzer"},
+                "encryption": { "type": "text", "analyzer": "custom_analyzer"},
+                "connectiontype": { "type": "text", "analyzer": "custom_analyzer"},
+                "password": { "type": "text", "analyzer": "custom_analyzer"},
+                "interfacedescription": { "type": "text", "analyzer": "custom_analyzer"},
+                "adapterguid": { "type": "text", "analyzer": "custom_analyzer"},
+                "filename": { "type": "text", "analyzer": "custom_analyzer"},
+                "lastmodifiedtime": { "type": "date" },
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},

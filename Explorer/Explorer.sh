@@ -1,11 +1,11 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_explorer?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_explorer?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
-    "number_of_replicas": 1,
+    "number_of_replicas": 0,
     "analysis": {
       "char_filter": {
         "replace_special": {
@@ -65,6 +65,9 @@ curl -X PUT "http://ela-master.ed.qa:9200/${elasticPrefix}_explorer?pretty" -H '
                 "accessTime": { "type": "date" },
                 "entryModifiedTime": { "type": "date" },
                 "dataLen": { "type": "long" },
+                "path": { "type": "text", "analyzer": "custom_analyzer"},
+                "disk": { "type": "text", "analyzer": "custom_analyzer"},
+                "md5_sig": { "type": "text", "analyzer": "custom_analyzer"},
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},

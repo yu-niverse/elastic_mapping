@@ -30,7 +30,7 @@ done
 
 # for index in ${array2[@]}; do
 #     echo $index
-#     curl -X DELETE "http://ela-master.ed.qa:9200/$index?pretty"
+#     curl -X DELETE "http://192.168.200.190:9200/$index?pretty"
 # done
 
 # ./Collection/AppResourceUsageMonitor.sh  
