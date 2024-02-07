@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_explorer?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_explorer?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -68,6 +68,8 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_explorer?pretty" -H 'C
                 "path": { "type": "text", "analyzer": "custom_analyzer"},
                 "disk": { "type": "text", "analyzer": "custom_analyzer"},
                 "md5_sig": { "type": "text", "analyzer": "custom_analyzer"},
+                "yaraRuleHitCount" : { "type": "integer" },
+                "yaraRuleHit": { "type": "text", "analyzer": "custom_analyzer"},
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},
