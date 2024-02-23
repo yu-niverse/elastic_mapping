@@ -68,7 +68,8 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_chromebookmarks?pretty" -H
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},
-                "etc_main": { "type": "text", "analyzer": "custom_analyzer"}
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
