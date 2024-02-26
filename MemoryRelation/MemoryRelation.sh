@@ -53,14 +53,11 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_memory_relation?pretty" -H
         "_doc": {
             "dynamic": "strict",
             "properties": {
-                "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
-                "agentIP": { "type": "ip" },
-                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
                 "isRoot": { "type": "boolean" },
                 "parent": { "type": "text", "analyzer": "custom_analyzer"},
                 "child": { "type": "text", "analyzer": "custom_analyzer"},
-                "mode": { "type": "keyword" }
+                "task_id": { "type": "keyword" }
             }
         }
     }
