@@ -53,8 +53,33 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_email?pretty" -H 'Content-
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "id": { "type": "integer" }, 
+                "from": { "type": "text" }, 
+                "to": { "type": "text" }, 
+                "sent_representing_name": { "type": "text" },
+                "type: { "type": "text" },
+        				"delivery_time": { "type": "date" }, 
+                "creation_time": { "type": "date" },
+                "importance": { "type": "text" }, 
+                "received": { "type": "text" }, 
+                "subject": { "type": "text" },
+                "message_ID": { "type": "text" }, 
+                "message": { "type": "text" },
+                "uuid": { "type": "keyword" },
+                "agent": { "type": "keyword" },
+                "agentIP": { "type": "ip" },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
 }
 '
+
+# date type
+# delivery_time
+# creation_time

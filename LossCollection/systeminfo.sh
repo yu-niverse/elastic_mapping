@@ -53,6 +53,31 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_systeminfo?pretty" -H 'Con
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "bios": { "type": "text" }, 
+                "os": { "type": "text" }, 
+                "cpu": { "type": "text" }, 
+                "mb": { "type": "text" }, 
+                "ram": { "type": "text" }, 
+                "gpu": { "type": "text" }, 
+                "monitor": { "type": "text" },
+                "storage": { "type": "text" }, 
+                "cdrom": { "type": "text" }, 
+                "audio": { "type": "text" }, 
+                "externalip": { "type": "text" }, 
+                "networkadapters": { "type": "text" }, 
+                "uptime": { "type": "text" }, 
+                "hotfix": { "type": "text" },
+                "name": { "type": "text" }, 
+                "username": { "type": "text" },
+                "uuid": { "type": "keyword" },
+                "agent": { "type": "keyword" },
+                "agentIP": { "type": "ip" },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }

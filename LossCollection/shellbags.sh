@@ -53,8 +53,30 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_shellbags?pretty" -H 'Cont
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "path": { "type": "text" }, 
+                "slotpath": { "type": "text" }, 
+                "slotnum": { "type": "integer" },
+                "lastmodifiedtime": { "type": "date" }, 
+                "slotmodifiedtime": { "type": "date" }, 
+                "createtime": { "type": "date" }, 
+                "accesstime": { "type": "date" },
+                "uuid": { "type": "keyword" },
+                "agent": { "type": "keyword" },
+                "agentIP": { "type": "ip" },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
 }
 '
+
+# date type
+# lastmodifiedtime 
+# slotmodifiedtime 
+# createtime
+# accesstime

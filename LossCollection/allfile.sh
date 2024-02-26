@@ -58,3 +58,5 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_allfile?pretty" -H 'Conten
     }
 }
 '
+
+# not found

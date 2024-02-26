@@ -53,8 +53,33 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_netadapters?pretty" -H 'Co
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "description": { "type": "text" }, 
+                "type": { "type": "text" }, 
+                "mac": { "type": "text" },  
+                "ip": { "type": "text" },  
+                "subnet_mask": { "type": "text" },  
+                "gateway": { "type": "text" }, 
+				        "dhcp_enabled" : { "type": "integer" },
+                "dhcp_server": { "type": "text" },  
+                "ddns_enabled" : { "type": "integer" },
+                "dns_server": { "type": "text" },  
+                "lease_lifetime" : { "type": "date" },
+                "valid_lifetime": { "type": "date" },
+                "uuid": { "type": "keyword" },
+                "agent": { "type": "keyword" },
+                "agentIP": { "type": "ip" },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
 }
 '
+
+# date type
+# lease_lifetime
+# valid_lifetime

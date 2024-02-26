@@ -53,8 +53,31 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_recentfile?pretty" -H 'Con
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "fullpath": { "type": "text" },  
+                "sourcepath": { "type": "text" },  
+                "name": { "type": "text" },  
+                "storedin": { "type": "text" },  
+                "extension": { "type": "text" },  
+                "ismissing": { "type": "text" }, 
+						    "createtime": { "type": "date" }, 
+                "accesstime": { "type": "date" }, 
+                "modifiedtime": { "type": "date" },
+                "uuid": { "type": "keyword" },
+                "agent": { "type": "keyword" },
+                "agentIP": { "type": "ip" },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
 }
 '
+
+# date type
+# createtime
+# accesstime
+# modifiedtime

@@ -53,8 +53,28 @@ curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_firefoxlogin?pretty" -H 'C
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "hostname": { "type": "text" },  
+                "username": { "type": "text" },  
+                "password": { "type": "text" }, 
+                "timecreated": { "type": "date" }, 
+                "timelastused": { "type": "date" }, 
+                "timepasswordchanged": { "type": "date" },
+                "uuid": { "type": "keyword" },
+                "agent": { "type": "keyword" },
+                "agentIP": { "type": "ip" },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
 }
 '
+
+# date type
+# timecreated: 1664505114
+# timelastused: 1664505114
+# timepasswordchanged: 1664505114
