@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # directories=("Main" "Memory" "Explorer" "Collection" "LossCollection")
-directories=("MemoryRelation")
+directories=("LossCollection")
 # Loop through the directories
 for dir in "${directories[@]}"; do
   # Check if the specified directory exists

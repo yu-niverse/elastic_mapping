@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://172.16.1.25:9200/${elasticPrefix}_startrun?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_startrun?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
