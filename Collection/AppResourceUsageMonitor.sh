@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
-elasticPrefix=$1
+elastic_url=$1 # http://192.168.190.121:9200
 
-curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_appresourceusagemonitor?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "${elastic_url}/ed_appresourceusagemonitor?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
