@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_main?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_memory_tree?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -53,15 +53,26 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_main?pretty" -H 'Conte
         "_doc": {
             "dynamic": "strict",
             "properties": {
-                "uuid": { "type": "keyword" },
-                "agent": { "type": "keyword" },
-                "agentIP": { "type": "ip" },
+                "uuid": { "type": "keyword"},
+                "agent": { "type": "keyword"},
+                "agentIP": { "type": "text", "fielddata": true},
                 "agentName": { "type": "text", "analyzer": "custom_analyzer"},
-                "index": { "type": "text", "analyzer": "custom_analyzer"},
+                "processId": { "type": "integer"},
+                "parentProcessId": { "type": "integer"},      
+                "processName": { "type": "text", "analyzer": "custom_analyzer", "fielddata": true},
+                "processCreateTime": { "type": "date"},
+                "parentProcessName": { "type": "text", "analyzer": "custom_analyzer"},
+                "parentProcessCreateTime": { "type": "date"},
+                "processPath": { "type": "text", "analyzer": "custom_analyzer"},
+                "userName": { "type": "text", "analyzer": "custom_analyzer"},
+                "isPacked": { "type": "boolean"},
+                "dynamicCommand": { "type": "text", "analyzer": "custom_analyzer"},
+                "isHide": { "type": "boolean"},
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
-                "date_main": { "type": "date" },
+                "date_main": { "type": "date"},
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},
-                "etc_main": { "type": "text", "analyzer": "custom_analyzer"}
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }

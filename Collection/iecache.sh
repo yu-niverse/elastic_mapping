@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_emailpath?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_iecache?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -53,8 +53,29 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_emailpath?pretty" -H '
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "sourceurlname": { "type": "text" },  
+                "localfilename": { "type": "text" }, 
+                "expirestime": { "type": "date" },
+                "lastaccesstime": { "type": "date" },
+                "lastmodifiedtime": { "type": "date" },
+                "lastsynctime": { "type": "date" },
+                "uuid": { "type": "keyword" },
+                "agent": { "type": "keyword" },
+                "agentIP": { "type": "ip" },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
 }
 '
+
+# date type
+# expirestime
+# lastaccesstime
+# lastmodifiedtime
+# lastsynctime

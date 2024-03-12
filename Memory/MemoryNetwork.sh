@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_memory_network?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_memory_network?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -57,31 +57,32 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_memory_network?pretty"
                 "agent": { "type": "keyword" },
                 "agentIP": { "type": "text", "fielddata": true },
                 "agentName": { "type": "text", "analyzer": "custom_analyzer" },
-                "agentPort": { "type" : "integer" },
-                "agentCountry": { "type" : "keyword" },
-                "agentLongitude": { "type" : "integer" },
-                "agentLatitude": { "type" : "integer" },
-                "processId": { "type" : "integer" },
+                "agentPort": { "type": "integer" },
+                "agentCountry": { "type": "keyword" },
+                "agentLongitude": { "type": "integer" },
+                "agentLatitude": { "type": "integer" },
+                "processId": { "type": "integer" },
                 "processCreateTime": { "type": "date" },
-                "timestamp": { "type" : "date" },
-                "srcAddress": { "type" : "text" },
-                "srcPort": { "type" : "integer" },
-                "dstAddress": { "type" : "text" },
-                "dstPort": { "type" : "integer" },
-                "action": { "type" : "text", "analyzer": "custom_analyzer"},
-                "otherIP": { "type" : "text", "fielddata": true },
-                "otherPort": { "type" : "integer" },
-                "otherCountry": { "type" : "keyword" },
-                "otherLongitude": { "type" : "integer" },
-                "otherLatitude": { "type" : "integer" },
-                "connectionInOrOut": { "type" : "keyword" },
-                "mode": { "type" : "keyword" },
-                "malicious": { "type" : "integer" },
-                "virusTotal": { "type" : "integer" },
+                "timestamp": { "type": "date" },
+                "srcAddress": { "type": "text" },
+                "srcPort": { "type": "integer" },
+                "dstAddress": { "type": "text" },
+                "dstPort": { "type": "integer" },
+                "action": { "type": "text", "analyzer": "custom_analyzer"},
+                "otherIP": { "type": "text", "fielddata": true },
+                "otherPort": { "type": "integer" },
+                "otherCountry": { "type": "keyword" },
+                "otherLongitude": { "type": "integer" },
+                "otherLatitude": { "type": "integer" },
+                "connectionInOrOut": { "type": "keyword" },
+                "mode": { "type": "keyword" },
+                "malicious": { "type": "integer" },
+                "virusTotal": { "type": "integer" },
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},
-                "etc_main": { "type": "text", "analyzer": "custom_analyzer"}
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }

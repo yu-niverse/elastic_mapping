@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_memory_relation?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_netadapters?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -53,16 +53,33 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_memory_relation?pretty
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "description": { "type": "text" }, 
+                "type": { "type": "text" }, 
+                "mac": { "type": "text" },  
+                "ip": { "type": "text" },  
+                "subnet_mask": { "type": "text" },  
+                "gateway": { "type": "text" }, 
+				        "dhcp_enabled" : { "type": "integer" },
+                "dhcp_server": { "type": "text" },  
+                "ddns_enabled" : { "type": "integer" },
+                "dns_server": { "type": "text" },  
+                "lease_lifetime" : { "type": "date" },
+                "valid_lifetime": { "type": "date" },
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
                 "agentIP": { "type": "ip" },
                 "agentName": { "type": "text", "analyzer": "custom_analyzer"},
-                "isRoot": { "type": "boolean" },
-                "parent": { "type": "text", "analyzer": "custom_analyzer"},
-                "child": { "type": "text", "analyzer": "custom_analyzer"},
-                "mode": { "type" : "keyword" }
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
 }
 '
+
+# date type
+# lease_lifetime
+# valid_lifetime

@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_chromekeywordsearch?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_systeminfo?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -53,13 +53,26 @@ curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_chromekeywordsearch?pr
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "bios": { "type": "text" }, 
+                "os": { "type": "text" }, 
+                "cpu": { "type": "text" }, 
+                "mb": { "type": "text" }, 
+                "ram": { "type": "text" }, 
+                "gpu": { "type": "text" }, 
+                "monitor": { "type": "text" },
+                "storage": { "type": "text" }, 
+                "cdrom": { "type": "text" }, 
+                "audio": { "type": "text" }, 
+                "externalip": { "type": "text" }, 
+                "networkadapters": { "type": "text" }, 
+                "uptime": { "type": "text" }, 
+                "hotfix": { "type": "text" },
+                "name": { "type": "text" }, 
+                "username": { "type": "text" },
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
                 "agentIP": { "type": "ip" },
                 "agentName": { "type": "text", "analyzer": "custom_analyzer"},
-                "term": { "type": "text", "analyzer": "custom_analyzer"},
-                "title": { "type": "text", "analyzer": "custom_analyzer"},
-                "url": { "type": "text", "analyzer": "custom_analyzer"},
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},

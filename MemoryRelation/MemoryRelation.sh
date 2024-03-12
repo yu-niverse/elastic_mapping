@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_netadapters?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_memory_relation?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -53,6 +53,11 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_netadapters?pretty" -H
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "agent": { "type": "keyword" },
+                "isRoot": { "type": "boolean" },
+                "parent": { "type": "text", "analyzer": "custom_analyzer"},
+                "child": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }

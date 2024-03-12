@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_iecache?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_remotedesktoplogin?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -58,3 +58,5 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_iecache?pretty" -H 'Co
     }
 }
 '
+
+# not used

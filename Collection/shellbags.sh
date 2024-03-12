@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_allfile?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_shellbags?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -53,8 +53,30 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_allfile?pretty" -H 'Co
         "_doc": {
             "dynamic": "strict",
             "properties": {
+                "path": { "type": "text" }, 
+                "slotpath": { "type": "text" }, 
+                "slotnum": { "type": "integer" },
+                "lastmodifiedtime": { "type": "date" }, 
+                "slotmodifiedtime": { "type": "date" }, 
+                "createtime": { "type": "date" }, 
+                "accesstime": { "type": "date" },
+                "uuid": { "type": "keyword" },
+                "agent": { "type": "keyword" },
+                "agentIP": { "type": "ip" },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer"},
+                "item_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "date_main": { "type": "date" },
+                "type_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
 }
 '
+
+# date type
+# lastmodifiedtime 
+# slotmodifiedtime 
+# createtime
+# accesstime

@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elasticPrefix=$1
 
-curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_memory?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "http://192.168.200.190:9200/${elasticPrefix}_memory?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
@@ -78,12 +78,13 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_memory?pretty" -H 'Con
                 "hide": { "type": "text", "analyzer": "custom_analyzer"},
                 "mode": { "type": "text", "analyzer": "custom_analyzer"},
                 "processKey": {"type": "keyword"},
-                "malicious": { "type" : "integer" },
-                "virusTotal": { "type" : "integer" },
+                "malicious": { "type": "integer" },
+                "virusTotal": { "type": "integer" },
                 "item_main": { "type": "text", "analyzer": "custom_analyzer"},
                 "date_main": { "type": "date"},
                 "type_main": { "type": "text", "analyzer": "custom_analyzer"},
-                "etc_main": { "type": "text", "analyzer": "custom_analyzer"}
+                "etc_main": { "type": "text", "analyzer": "custom_analyzer"},
+                "task_id": { "type": "keyword" }
             }
         }
     }
