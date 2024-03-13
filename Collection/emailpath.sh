@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 elastic_url=$1
 
-curl -X PUT "${elastic_url}/${elastic_url}_emailpath?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "${elastic_url}/ed_emailpath?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
