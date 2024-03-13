@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 elastic_url=$1 # http://192.168.190.121:9200
+echo "Elastic URL: $elastic_url"
 
 curl -X PUT "${elastic_url}/ed_appresourceusagemonitor?pretty" -H 'Content-Type: application/json' -d'
 {

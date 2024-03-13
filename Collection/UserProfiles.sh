@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
-elasticPrefix=$1
+elastic_url=$1
 
-curl -X PUT "${elastic_url}/${elasticPrefix}_userprofiles?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "${elastic_url}/${elastic_url}_userprofiles?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,

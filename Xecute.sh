@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 elastic_url=$1 # http://192.168.200.190:9200
+echo "Elastic URL: $elastic_url"
 
 # Check if the elastic_url is provided
 if [ -z "$elastic_url" ]; then
