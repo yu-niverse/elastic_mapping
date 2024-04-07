@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-directories=("Collection" "Explorer" "Memory" "MemoryRelation")
+directories=("NewElastic")
 # Loop through the directories
 for dir in "${directories[@]}"; do
   # Check if the specified directory exists
@@ -19,7 +19,7 @@ for dir in "${directories[@]}"; do
   # Execute each script one by one
   for script in $files; do
     echo "Executing: $script"
-    ./"$script" ed
+    ./"$script" test
     echo "Finished executing: $script"
   done
   cd ..
