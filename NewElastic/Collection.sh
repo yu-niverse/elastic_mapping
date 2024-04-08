@@ -62,6 +62,7 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_collection?pretty" -H 
         "type_main": { "type": "text", "analyzer": "custom_analyzer" },
         "etc_main": { "type": "text", "analyzer": "custom_analyzer" },
         "task_id": { "type": "keyword" },
+        "category": { "type": "keyword" },
         "appresourceusagemonitor": {
           "properties": {
                 "record_id": { "type": "integer" },

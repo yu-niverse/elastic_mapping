@@ -19,7 +19,7 @@ for dir in "${directories[@]}"; do
   # Execute each script one by one
   for script in $files; do
     echo "Executing: $script"
-    ./"$script" test
+    ./"$script" ed
     echo "Finished executing: $script"
   done
   cd ..

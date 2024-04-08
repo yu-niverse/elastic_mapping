@@ -62,21 +62,26 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_explorer?pretty" -H 'C
                 "type_main": { "type": "text", "analyzer": "custom_analyzer" },
                 "etc_main": { "type": "text", "analyzer": "custom_analyzer" },
                 "task_id": { "type": "keyword" },
-                "fileName": { "type": "text", "analyzer": "custom_analyzer" },
-                "isDeleted": { "type": "boolean" },
-                "isDirectory": { "type": "boolean" },
-                "createTime": { "type": "date" },
-                "writeTime": { "type": "date" },
-                "accessTime": { "type": "date" },
-                "entryModifiedTime": { "type": "date" },
-                "dataLen": { "type": "long" },
-                "path": { "type": "text", "analyzer": "custom_analyzer" },
-                "disk": { "type": "text", "analyzer": "custom_analyzer" },
-                "md5_sig": { "type": "text", "analyzer": "custom_analyzer" },
-                "yaraRuleHitCount" : { "type": "integer" },
-                "yaraRuleHit": { "type": "text", "analyzer": "custom_analyzer" },
-                "isRoot": { "type": "boolean" },
-                "child": { "type": "text", "analyzer": "custom_analyzer" }
+                "category": { "type": "keyword" },
+                "explorer": {
+                  "properties": {
+                      "fileName": { "type": "text", "analyzer": "custom_analyzer" },
+                      "isDeleted": { "type": "boolean" },
+                      "isDirectory": { "type": "boolean" },
+                      "createTime": { "type": "date" },
+                      "writeTime": { "type": "date" },
+                      "accessTime": { "type": "date" },
+                      "entryModifiedTime": { "type": "date" },
+                      "dataLen": { "type": "long" },
+                      "path": { "type": "text", "analyzer": "custom_analyzer" },
+                      "disk": { "type": "text", "analyzer": "custom_analyzer" },
+                      "md5_sig": { "type": "text", "analyzer": "custom_analyzer" },
+                      "yaraRuleHitCount" : { "type": "integer" },
+                      "yaraRuleHit": { "type": "text", "analyzer": "custom_analyzer" },
+                      "isRoot": { "type": "boolean" },
+                      "child": { "type": "text", "analyzer": "custom_analyzer" }
+                  }
+                }
             }
         }
     }
