@@ -5,7 +5,7 @@ curl -X PUT "http://192.168.190.121:9200/${elasticPrefix}_memory?pretty" -H 'Con
 {
   "settings": {
     "number_of_shards": 1,
-    "number_of_replicas": 1,
+    "number_of_replicas": 2,
     "analysis": {
       "char_filter": {
         "replace_special": {
