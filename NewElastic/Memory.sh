@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
-elasticPrefix=$1
+elastic_url=$1
 
-curl -X PUT "http://35.76.121.49:9200/${elasticPrefix}_memory?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "${elastic_url}/ed_memory?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
     "number_of_shards": 1,
