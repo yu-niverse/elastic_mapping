@@ -8,7 +8,7 @@ if [ -z "$elastic_url" ]; then
   exit 1
 fi
 
-directories=("Collection" "Explorer" "Memory" "MemoryRelation")
+directories=("NewElastic")
 # Loop through the directories
 for dir in "${directories[@]}"; do
   # Check if the specified directory exists
