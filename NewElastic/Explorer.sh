@@ -50,7 +50,6 @@ curl -X PUT "${elastic_url}/ed_explorer?pretty" -H 'Content-Type: application/js
     }
   },
     "mappings": {
-        "_doc": {
             "dynamic": "strict",
             "properties": {
                 "uuid": { "type": "keyword" },
@@ -83,7 +82,6 @@ curl -X PUT "${elastic_url}/ed_explorer?pretty" -H 'Content-Type: application/js
                   }
                 }
             }
-        }
     }
 }
 '

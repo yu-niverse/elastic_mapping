@@ -50,13 +50,12 @@ curl -X PUT "${elastic_url}/ed_memory?pretty" -H 'Content-Type: application/json
     }
   },
 	"mappings": {
-        "_doc": {
             "dynamic": "strict",
             "properties": {
                 "uuid": { "type": "keyword" },
                 "agent": { "type": "keyword" },
-                "agentIP": { "type": "text", "analyzer": "custom_analyzer", "fielddata": true },
-                "agentName": { "type": "text", "analyzer": "custom_analyzer" },
+                "agentIP": { "type": "text", "analyzer": "custom_analyzer", "fields": { "raw": { "type": "keyword" } } },
+                "agentName": { "type": "text", "analyzer": "custom_analyzer", "fields": { "raw": { "type": "keyword" } } },
                 "item_main": { "type": "text", "analyzer": "custom_analyzer" },
                 "date_main": { "type": "date" },
                 "type_main": { "type": "text", "analyzer": "custom_analyzer" },
@@ -65,7 +64,7 @@ curl -X PUT "${elastic_url}/ed_memory?pretty" -H 'Content-Type: application/json
                 "category": { "type": "keyword" },
                 "memory": {
                   "properties": {
-                      "processName": { "type": "text", "analyzer": "custom_analyzer", "fielddata": true },
+                      "processName": { "type": "text", "analyzer": "custom_analyzer", "fields": { "raw": { "type": "keyword" } } },
                       "processCreateTime": { "type": "date" },
                       "processConnectIP": { "type": "text", "analyzer": "custom_analyzer" },
                       "dynamicCommand": { "type": "text", "analyzer": "custom_analyzer" },
@@ -92,34 +91,34 @@ curl -X PUT "${elastic_url}/ed_memory?pretty" -H 'Content-Type: application/json
                 },
                 "memory_network": {
                   "properties": {
-                    "agentPort": { "type": "integer", "fielddata": true },
+                    "agentPort": { "type": "integer", "fields": { "raw": { "type": "keyword" } } },
                     "agentCountry": { "type": "keyword" },
                     "agentLongitude": { "type": "integer" },
                     "agentLatitude": { "type": "integer" },
-                    "processId": { "type": "integer", "fielddata": true },
-                    "processCreateTime": { "type": "date", "fielddata": true },
-                    "timestamp": { "type": "date", "fielddata": true },
-                    "srcAddress": { "type": "text", "fielddata": true },
-                    "srcPort": { "type": "integer", "fielddata": true },
-                    "dstAddress": { "type": "text", "fielddata": true },
-                    "dstPort": { "type": "integer", "fielddata": true },
-                    "action": { "type": "text", "analyzer": "custom_analyzer" },
-                    "otherIP":  { "type": "text", "analyzer": "custom_analyzer", "fielddata": true },
-                    "otherPort": { "type": "integer", "fielddata": true },
+                    "processId": { "type": "integer", "fields": { "raw": { "type": "keyword" } } },
+                    "processCreateTime": { "type": "date", "fields": { "raw": { "type": "keyword" } } },
+                    "timestamp": { "type": "date", "fields": { "raw": { "type": "keyword" } } },
+                    "srcAddress": { "type": "text", "fields": { "raw": { "type": "keyword" } } },
+                    "srcPort": { "type": "integer", "fields": { "raw": { "type": "keyword" } } },
+                    "dstAddress": { "type": "text", "fields": { "raw": { "type": "keyword" } } },
+                    "dstPort": { "type": "integer", "fields": { "raw": { "type": "keyword" } } },
+                    "action": { "type": "text", "analyzer": "custom_analyzer", "fields": { "raw": { "type": "keyword" } } },
+                    "otherIP":  { "type": "text", "analyzer": "custom_analyzer", "fields": { "raw": { "type": "keyword" } } },
+                    "otherPort": { "type": "integer", "fields": { "raw": { "type": "keyword" } } },
                     "otherCountry": { "type": "keyword" },
                     "otherLongitude": { "type": "integer" },
                     "otherLatitude": { "type": "integer" },
                     "connectionInOrOut": { "type": "keyword" },
                     "mode": { "type": "keyword" },
                     "malicious": { "type": "integer" },
-                    "virusTotal": { "type": "integer", "fielddata": true }
+                    "virusTotal": { "type": "integer", "fields": { "raw": { "type": "keyword" } } }
                   }
                 },
                 "memory_tree": {
                   "properties": {
                       "processId": { "type": "integer" },
                       "parentProcessId": { "type": "integer" },      
-                      "processName": { "type": "text", "analyzer": "custom_analyzer", "fielddata": true},
+                      "processName": { "type": "text", "analyzer": "custom_analyzer", "fields": { "raw": { "type": "keyword" } } },
                       "processCreateTime": { "type": "date" },
                       "parentProcessName": { "type": "text", "analyzer": "custom_analyzer" },
                       "parentProcessCreateTime": { "type": "date" },
@@ -133,6 +132,5 @@ curl -X PUT "${elastic_url}/ed_memory?pretty" -H 'Content-Type: application/json
                   }
                 }
             }
-        }
     }
 }'
