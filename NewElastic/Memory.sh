@@ -92,27 +92,27 @@ curl -X PUT "${elastic_url}/ed_memory?pretty" -H 'Content-Type: application/json
                 },
                 "memory_network": {
                   "properties": {
-                    "agentPort": { "type": "integer" },
+                    "agentPort": { "type": "integer", "fielddata": true },
                     "agentCountry": { "type": "keyword" },
                     "agentLongitude": { "type": "integer" },
                     "agentLatitude": { "type": "integer" },
-                    "processId": { "type": "integer" },
-                    "processCreateTime": { "type": "date" },
-                    "timestamp": { "type": "date" },
-                    "srcAddress": { "type": "text" },
-                    "srcPort": { "type": "integer" },
-                    "dstAddress": { "type": "text" },
-                    "dstPort": { "type": "integer" },
+                    "processId": { "type": "integer", "fielddata": true },
+                    "processCreateTime": { "type": "date", "fielddata": true },
+                    "timestamp": { "type": "date", "fielddata": true },
+                    "srcAddress": { "type": "text", "fielddata": true },
+                    "srcPort": { "type": "integer", "fielddata": true },
+                    "dstAddress": { "type": "text", "fielddata": true },
+                    "dstPort": { "type": "integer", "fielddata": true },
                     "action": { "type": "text", "analyzer": "custom_analyzer" },
                     "otherIP":  { "type": "text", "analyzer": "custom_analyzer", "fielddata": true },
-                    "otherPort": { "type": "integer" },
+                    "otherPort": { "type": "integer", "fielddata": true },
                     "otherCountry": { "type": "keyword" },
                     "otherLongitude": { "type": "integer" },
                     "otherLatitude": { "type": "integer" },
                     "connectionInOrOut": { "type": "keyword" },
                     "mode": { "type": "keyword" },
                     "malicious": { "type": "integer" },
-                    "virusTotal": { "type": "integer" }
+                    "virusTotal": { "type": "integer", "fielddata": true }
                   }
                 },
                 "memory_tree": {
